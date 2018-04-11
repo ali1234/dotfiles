@@ -1,0 +1,3 @@
+userChrome.css -> ~/.mozilla/firefox/<profile>/chrome/
+.gtkrc-2.0 -> ~/
+Orion -> ~/.local/share/themes/

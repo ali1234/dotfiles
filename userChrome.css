@@ -1,0 +1,23 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+#PanelUI-menu-button { display: none !important;}
+#PersonalToolbar { min-height: 29px !important; }
+.tab-line { display: none !important; }
+.urlbar-go-button { display: none !important; }
+#pageActionButton { display: none !important; }
+#pageActionSeparator { display: none !important; }
+#star-button { display: none !important; }
+
+* {
+ /*CSS transitions*/
+ -moz-transition-property: none !important;
+ transition-property: none !important;
+ /*CSS transforms*/
+ -moz-transform: none !important;
+ transform: none !important;
+ /*CSS animations*/
+ -moz-animation: none !important;
+ animation: none !important;
+}
+
+
+
