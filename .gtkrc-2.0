@@ -1,0 +1,8 @@
+style "xfce-panel"
+{
+    GtkButton::inner-border = {2, 2, 0, 0}
+}
+
+# XFCE panel theming.
+widget "*Xfce*Panel*"			style "xfce-panel"
+
