@@ -9,8 +9,8 @@ xfconf-query -c xsettings -p /Gtk/ThemeName -s "Adwaita"
 xfconf-query -c xsettings -p /Gtk/IconThemeName -s "ubuntu-mono-light"
 xfconf-query -c xfwm4 -p /general/theme -s "Orion"
 xfconf-query -c xfwm4 -p /general/title-font -s "DejaVu Sans 10"
-xfconf-query -c thunar-volman -p /automount-drives/enabled -s 0
-xfconf-query -c thunar-volman -p /automount-media/enabled -s 0
+xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
+xfconf-query -c thunar-volman -p /automount-media/enabled -s false
 
 
 echo "Don't forget to install userChrome.css"
