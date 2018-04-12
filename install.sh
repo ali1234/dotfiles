@@ -6,6 +6,8 @@ cp -r Orion ~/.local/share/themes/
 mkdir -p ~/.local/share/icons/
 cp -rd ubuntu-mono-light ~/.local/share/icons/
 
+sudo apt purge catfish orage sgt-launcher sgt-puzzles
+
 xfconf-query -c xsettings -p /Gtk/FontName -s "DejaVu Sans 10"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "ubuntu-mono-light"
