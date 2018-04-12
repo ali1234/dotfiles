@@ -3,6 +3,8 @@
 cp .gtkrc-2.0 ~/
 mkdir -p ~/.local/share/themes/
 cp -r Orion ~/.local/share/themes/
+mkdir -p ~/.local/share/icons/
+cp -rd ubuntu-mono-light ~/.local/share/icons/
 
 xfconf-query -c xsettings -p /Gtk/FontName -s "DejaVu Sans 10"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
