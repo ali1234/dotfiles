@@ -16,5 +16,6 @@ xfconf-query -c xfwm4 -p /general/title_font -s "DejaVu Sans 10"
 xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
 xfconf-query -c thunar-volman -p /automount-media/enabled -s false
 
+xfpanel-switch load panels/18.04-1-monitor.tar.bz2
 
 echo "Don't forget to install userChrome.css"
