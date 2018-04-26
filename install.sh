@@ -1,13 +1,25 @@
 #!/bin/sh
 
+sudo apt purge catfish orage sgt-launcher sgt-puzzles gnome-software thunderbird
+sudo apt install mpv terminator synaptic
+
+# set terminator as default terminal
+cp helpers.rc ~/.config/xfce4/
+
+# make mpv the default layer for all video mimetypes
+echo [Default Applications] > ~/.config/mimeapps.list
+cat /usr/share/applications/mpv/mpv.desktop | grep MimeType \
+    | cut -d= -f2 | tr \; \\\n | grep ^video \
+    | awk '{print $1."=mpv.desktop"}' >> ~/.config/mimeapps.list
+
+# install themes and icons
 cp .gtkrc-2.0 ~/
 mkdir -p ~/.local/share/themes/
 cp -r Orion ~/.local/share/themes/
 mkdir -p ~/.local/share/icons/
 cp -rd ubuntu-mono-light ~/.local/share/icons/
 
-sudo apt purge catfish orage sgt-launcher sgt-puzzles gnome-software
-
+# set misc appearence settings
 xfconf-query -c xsettings -p /Gtk/FontName -s "DejaVu Sans 10"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "ubuntu-mono-light"
