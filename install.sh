@@ -6,9 +6,12 @@ sudo apt install mpv terminator synaptic
 # set terminator as default terminal
 cp helpers.rc ~/.config/xfce4/
 
-# make mpv the default layer for all video mimetypes
+# make mpv the default player for all video mimetypes
 echo [Default Applications] > ~/.config/mimeapps.list
-cat /usr/share/applications/mpv/mpv.desktop | grep MimeType \
+cat /usr/share/applications/mpv.desktop | grep MimeType \
+    | cut -d= -f2 | tr \; \\\n | grep ^video \
+    | awk '{print $1."=mpv.desktop"}' > mimeapps.list
+cat /usr/share/applications/org.xfce.Parole.desktop | grep MimeType \
     | cut -d= -f2 | tr \; \\\n | grep ^video \
     | awk '{print $1."=mpv.desktop"}' > mimeapps.list
 cat /usr/share/xubuntu/applications/defaults.list | grep ^video \
