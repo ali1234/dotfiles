@@ -8,12 +8,13 @@ cp helpers.rc ~/.config/xfce4/
 
 # make mpv the default player for all video mimetypes
 echo [Default Applications] > ~/.config/mimeapps.list
+rm mimeapps.list
 cat /usr/share/applications/mpv.desktop | grep MimeType \
     | cut -d= -f2 | tr \; \\\n | grep ^video \
-    | awk '{print $1."=mpv.desktop"}' > mimeapps.list
+    | awk '{print $1."=mpv.desktop"}' >> mimeapps.list
 cat /usr/share/applications/org.xfce.Parole.desktop | grep MimeType \
     | cut -d= -f2 | tr \; \\\n | grep ^video \
-    | awk '{print $1."=mpv.desktop"}' > mimeapps.list
+    | awk '{print $1."=mpv.desktop"}' >> mimeapps.list
 cat /usr/share/xubuntu/applications/defaults.list | grep ^video \
     | sed -e 's/parole.desktop/mpv.desktop/' >> mimeapps.list
 cat mimeapps.list | sort | uniq >> ~/.config/mimeapps.list
