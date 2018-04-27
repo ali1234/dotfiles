@@ -10,7 +10,10 @@ cp helpers.rc ~/.config/xfce4/
 echo [Default Applications] > ~/.config/mimeapps.list
 cat /usr/share/applications/mpv/mpv.desktop | grep MimeType \
     | cut -d= -f2 | tr \; \\\n | grep ^video \
-    | awk '{print $1."=mpv.desktop"}' >> ~/.config/mimeapps.list
+    | awk '{print $1."=mpv.desktop"}' > mimeapps.list
+cat /usr/share/xubuntu/applications/defaults.list | grep ^video \
+    | sed -e 's/parole.desktop/mpv.desktop/' >> mimeapps.list
+cat mimeapps.list | sort | uniq >> ~/.config/mimeapps.list
 
 # install themes and icons
 cp .gtkrc-2.0 ~/
