@@ -26,6 +26,10 @@ cp -r Orion ~/.local/share/themes/
 mkdir -p ~/.local/share/icons/
 cp -rd ubuntu-mono-light ~/.local/share/icons/
 
+# app specific config files
+mkdir -p ~/.config/mpv/
+cp mpv.conf ~/.config/mpv/
+
 # set misc appearence settings
 xfconf-query -c xsettings -p /Gtk/FontName -s "DejaVu Sans 9.5"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
