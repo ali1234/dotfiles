@@ -1,0 +1,11 @@
+[Icon Theme]
+Name=My Icons
+Comment=
+Inherits=ubuntu-mono-light,Humanity,Adwaita,hicolor
+
+Directories=status/22
+
+[status/22]
+Size=22
+Context=Status
+Type=Fixed

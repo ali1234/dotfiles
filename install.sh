@@ -24,7 +24,7 @@ cp .gtkrc-2.0 ~/
 mkdir -p ~/.local/share/themes/
 cp -r Orion ~/.local/share/themes/
 mkdir -p ~/.local/share/icons/
-cp -rd ubuntu-mono-light ~/.local/share/icons/
+cp -rd myicons ~/.local/share/icons/
 
 # app specific config files
 mkdir -p ~/.config/mpv/
@@ -33,7 +33,7 @@ cp mpv.conf ~/.config/mpv/
 # set misc appearence settings
 xfconf-query -c xsettings -p /Gtk/FontName -s "DejaVu Sans 9.5"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "ubuntu-mono-light"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "myicons"
 xfconf-query -c xfwm4 -p /general/theme -s "Orion"
 xfconf-query -c xfwm4 -p /general/title_font -s "DejaVu Sans Bold 9.5"
 xfconf-query -c thunar-volman -p /automount-drives/enabled -s false
@@ -43,7 +43,7 @@ xfconf-query -c thunar-volman -p /automount-media/enabled -s false
 dconf write /org/gnome/desktop/interface/font-name "'DejaVu Sans 9.5'"
 dconf write /org/gnome/desktop/interface/monospace-font-name "'Monospace 9.5'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita'"
-dconf write /org/gnome/desktop/interface/icon-theme "'ubuntu-mono-light'"
+dconf write /org/gnome/desktop/interface/icon-theme "'myicons'"
 
 
 NMONITORS=$(xrandr --listactivemonitors | head -n 1 | cut -d\  -f 2)
